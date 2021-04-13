@@ -1,1 +1,1 @@
-# umm-python-client
+# metadata-python-client
