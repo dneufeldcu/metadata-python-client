@@ -1,4 +1,3 @@
-import os
 import json
 from jsonschema import validate
 import unittest
@@ -31,25 +30,25 @@ class UmmValidation(unittest.TestCase):
                     "Version": "1.6.2"
                 }
             }
-         # If no exception is raised by validate(), the instance is valid.
+        # If no exception is raised by validate(), the instance is valid.
         validate(instance=payload, schema=self.granule_schema)
 
     def test_granule_example(self):
-        with open( f"../schemas/granule/v1.6.2/GranuleExample.json" ) as file:
+        with open("../schemas/granule/v1.6.2/GranuleExample.json") as file:
             payload = json.load(file)
         validate(instance=payload, schema=self.granule_schema)
 
     def test_granule_example1(self):
-        with open( "../schemas/granule/v1.6.2/GranuleExample1.json" ) as file:
-            payload = json.load( file )
-        validate( instance=payload, schema=self.granule_schema )
+        with open("../schemas/granule/v1.6.2/GranuleExample1.json") as file:
+            payload = json.load(file)
+        validate(instance=payload, schema=self.granule_schema)
 
     def test_collection_example(self):
-        with open(f"../schemas/granule/v1.6.2/CollectionExample.json" ) as file:
+        with open("../schemas/granule/v1.6.2/CollectionExample.json") as file:
             payload = json.load(file)
         validate(instance=payload, schema=self.collection_schema)
 
     def test_collection1_example(self):
-        with open( f"../schemas/granule/v1.6.2/CollectionExample1.json" ) as file:
-            payload = json.load( file )
+        with open("../schemas/granule/v1.6.2/CollectionExample1.json") as file:
+            payload = json.load(file)
         validate(instance=payload, schema=self.collection_schema)
